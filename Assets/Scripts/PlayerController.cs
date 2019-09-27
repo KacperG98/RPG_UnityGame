@@ -9,9 +9,19 @@ public class PlayerController : MonoBehaviour
 
     public Animator myAnim;
 
+    public static PlayerController instance;
+
     void Start()
     {
-
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
