@@ -6,10 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D theRB;
     public float moveSpeed;
-
     public Animator myAnim;
-
     public static PlayerController instance;
+    public string areaTransitionName;
 
     void Start()
     {

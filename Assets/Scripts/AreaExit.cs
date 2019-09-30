@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class AreaExit : MonoBehaviour
 {
     public string areaToLoad;
+    public string areaTransitionName;
+    public AreaEntry theEntrance;
 
     void Start()
     {
-        
+        theEntrance.transitionName = areaTransitionName;
     }
     
     void Update()
@@ -21,6 +23,8 @@ public class AreaExit : MonoBehaviour
         if(other.tag == "Player")
         {
             SceneManager.LoadScene(areaToLoad);
+
+            PlayerController.instance.areaTransitionName = areaTransitionName;
         }
     }
 }
